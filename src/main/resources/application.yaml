@@ -1,0 +1,47 @@
+server:
+  port: 5051
+
+spring:
+  application:
+    name: mulemind-cloud-gateway-service
+
+  cloud:
+    gateway:
+      routes:
+        - id: mulemind-auth-service
+          uri: http://localhost:5052
+          predicates:
+            - Path=/auth/**
+
+        - id: mulemind-tenant-user-service
+          uri: http://localhost:5053
+          predicates:
+            - Path=/tenants/**
+
+        - id: mulemind-job-service
+          uri: http://localhost:5054
+          predicates:
+            - Path=/documents/**
+
+        - id: vector-service
+          uri: http://localhost:5055
+          predicates:
+            - Path=/vectors/**
+
+        - id: ai-transformation-service
+          uri: http://localhost:5056
+          predicates:
+            - Path=/ai/**
+
+        - id: transaction-service
+          uri: http://localhost:5057
+          predicates:
+            - Path=/transaction/**
+           
+
+auth:
+  service:
+    url: http://localhost:5052             
+
+jwt:
+  secret: 9Jt1c7zP6QwV8Lr5xC6vK0Z4E2m7R8H9nFJ3S5aQ2Wk=
