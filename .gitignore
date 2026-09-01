@@ -36,3 +36,15 @@ build/
 .vscode/
 
 *.class
+.DS_Store
+**/.DS_Store
+.mvn/
+.mvn/**
+*.class
+target/
+target/**
+build/
+build/**
+
+mvnw
+mvnw.cmd
