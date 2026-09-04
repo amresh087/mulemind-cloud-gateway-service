@@ -23,20 +23,21 @@ spring:
           predicates:
             - Path=/documents/**
 
-        - id: vector-service
-          uri: http://localhost:5055
+        - id: mulemind-discovery-service
+          uri: http://localhost:5057
           predicates:
-            - Path=/vectors/**
+            - Path=/discovery/**
 
-        - id: ai-transformation-service
+        - id: mulemind-ai-service
           uri: http://localhost:5056
           predicates:
             - Path=/ai/**
 
-        - id: transaction-service
-          uri: http://localhost:5057
+
+        - id: document-generation-service
+          uri: http://localhost:5058
           predicates:
-            - Path=/transaction/**
+            - Path=/reports/**
            
 
 auth:
